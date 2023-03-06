@@ -137,7 +137,7 @@ def food_search():
         ingredient = request.args.get('q')
         data = get_food_data(ingredient)
 
-        '''save the api data to an array and show on the template'''
+        '''save the data from API to an array'''
         for a_hints in data['hints']:
             '''get the image_url or return default image'''
             image_url = a_hints['food'].get('image') if a_hints['food'].get('image') else DEFAULT_IMAGE
@@ -167,6 +167,7 @@ def meals():
     form = MakeOwnDietPlanForm()
 
     if form.validate_on_submit():
+        # I tried getting the data using form.diet_name.data also but was not working either.
         diet_name = request.form['diet_name']
         diet_type = request.form['diet_type']
         user_id=g.user.id
