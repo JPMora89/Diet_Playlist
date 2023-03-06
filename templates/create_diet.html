@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Create your own Diet Plan</h1>
+
+<form action="/display_diets" method="POST" type="text" id="DietName">
+    <label for="DietName">Diet Name:</label>
+    
+  {% for field in form
+    if field.widget.input_type != 'hidden' %}
+    <p>
+        {{field}}
+    </p>
+    {% endfor %} 
+    <!-- <button>Add it to my meal!</button>  -->
+    <input type="submit">
+</form>
+<br>
+<br>
+
+
+{{meal_type}}
+{% endblock %}
+
+<!-- <script src="/static/app.js"></script> -->

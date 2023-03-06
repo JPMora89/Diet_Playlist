@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Here are your diet plans!</h1>
+
+<table class="table table-bordered table-dark">
+    <thead>
+    <tr>
+      <th scope="col">Diet Name</th>
+      <th scope="col">Type of Diet</th>
+
+    </tr>
+      </thead>
+    <tbody>
+<!-- {% for value in result.values() %} -->
+        <tr>
+            <td>{{diet_name}}</td>
+            <td>{{diet_type}}</td>
+        </tr>
+    </tbody>
+
+  
+
+    
+  
+</table>
+
+{% endfor %}
+{% endblock %}
+
+<!-- <script src="/static/app.js"></script> -->
