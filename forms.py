@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, PasswordField, SelectField
 from wtforms.validators import DataRequired, Email, Length
-
+from wtforms_sqlalchemy.fields import QuerySelectField
+from models import db, connect_db, User, Food, Diets
 
 class CreateUserForm(FlaskForm):
     """form to create a users."""
@@ -42,3 +43,10 @@ class MakeOwnDietPlanForm(FlaskForm):
     diet_name = StringField('Diet Name', validators=[DataRequired()])
     diet_type = SelectField('Type of Diet', 
     choices= [('weight loss', 'Weight Loss'), ('bulking', 'Bulking'), ('maintain', 'Maintain')])
+
+
+def DietQuery():
+    return Diets.query
+
+class ChooseDietForm(FlaskForm):
+    options = SelectField("User Diets")

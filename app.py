@@ -7,7 +7,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 
 from sqlalchemy.exc import IntegrityError
 
-from forms import CreateUserForm, LoginForm, MakeOwnDietPlanForm
+from forms import CreateUserForm, LoginForm, MakeOwnDietPlanForm, ChooseDietForm
 from models import db, connect_db, User, Food, Diets
 
 CURR_USER_KEY = "curr_user"
@@ -154,10 +154,14 @@ def food_search():
                             'nutrition': nutrition_list})
             
             user_id = g.user.id
+    
+    form = ChooseDietForm()
+    diet_from_db = db.session.query(Diets.diet_name)
 
+    form.options.choices = diet_from_db
     # food_likes = [food.api_id for food in User.query.get(user_id).foods]
     
-    return render_template('search_food.html', food_list=food_data_list, user_id= user_id)
+    return render_template('search_food.html', food_list=food_data_list, user_id= user_id, form=form, diet_from_db=diet_from_db)
 
 
 
@@ -170,10 +174,6 @@ def meals():
         # I tried getting the data using form.diet_name.data also but was not working either.
         diet_name = request.form['diet_name']
         diet_type = request.form['diet_type']
-        user_id=g.user.id
-        new_diet = Diets(diet_name=diet_name, diet_type=diet_type, user_id=user_id)
-        db.session.add(new_diet)
-        db.session.commit()
 
         result = request.form
         flash('New diet created successfully!', 'success')
@@ -206,16 +206,21 @@ def show_user_diets():
     form = MakeOwnDietPlanForm()
     diet_name = form.diet_name.data
     diet_type = form.diet_type.data
-    result = request.form
+    result = request.form        
+    user_id=g.user.id
+    new_diet = Diets(diet_name=diet_name, diet_type=diet_type, user_id=user_id)
+    db.session.add(new_diet)        
+    db.session.commit()
+
     # api_id = request.json.get('apiId')
     # user_id = request.json.get('userId')
     # new_diet = Diets(diet_name=diet_name, diet_type=diet_type, user_id=user_id)
     # db.session.add(new_diet)
     # db.session.commit()
+    diets = Diets.query.all()
+    return render_template('display_diets.html', form=form, result=result, diet_name=diet_name, diet_type=diet_type, diets=diets)
 
-    return render_template('display_diets.html', form=form, result=result, diet_name=diet_name, diet_type=diet_type)
 
- 
 
     
 

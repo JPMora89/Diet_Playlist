@@ -11,20 +11,18 @@
     </tr>
       </thead>
     <tbody>
-<!-- {% for value in result.values() %} -->
+{% for diet in diets %}
         <tr>
-            <td>{{diet_name}}</td>
-            <td>{{diet_type}}</td>
+            <td>{{diet.diet_name}}</td>
+            <td>{{diet.diet_type}}</td>
         </tr>
     </tbody>
 
-  
-
     
-  
+  {% endfor %}
 </table>
 
-{% endfor %}
+
 {% endblock %}
 
 <!-- <script src="/static/app.js"></script> -->

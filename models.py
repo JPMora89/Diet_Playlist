@@ -107,3 +107,6 @@ class Diets(db.Model):
         self.diet_name = diet_name
         self.diet_type = diet_type
         self.user_id = user_id
+
+    def __repr__(self):
+        return '<Diet {}>'.format(self.diet_name)
