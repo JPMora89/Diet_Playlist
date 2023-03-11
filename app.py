@@ -159,7 +159,7 @@ def food_search():
     diet_from_db = db.session.query(Diets.diet_name)
 
     form.options.choices = diet_from_db
-    # food_likes = [food.api_id for food in User.query.get(user_id).foods]
+    food_likes = [food.api_id for food in User.query.get(user_id).foods]
     
     return render_template('search_food.html', food_list=food_data_list, user_id= user_id, form=form, diet_from_db=diet_from_db)
 
@@ -171,7 +171,6 @@ def meals():
     form = MakeOwnDietPlanForm()
 
     if form.validate_on_submit():
-        # I tried getting the data using form.diet_name.data also but was not working either.
         diet_name = request.form['diet_name']
         diet_type = request.form['diet_type']
 
@@ -187,7 +186,7 @@ def display_diets(user_id):
     user_diets = Diets.query.filter_by(user_id=user_id).all()
     result = request.form
 
-    return render_template('display_diets.html', diets=user_diets, result=result)
+    return render_template('display_user_diets.html', diets=user_diets, result=result)
 
 
 
@@ -207,16 +206,14 @@ def show_user_diets():
     diet_name = form.diet_name.data
     diet_type = form.diet_type.data
     result = request.form        
-    user_id=g.user.id
+    
+    
+    user_id = g.user.id
     new_diet = Diets(diet_name=diet_name, diet_type=diet_type, user_id=user_id)
     db.session.add(new_diet)        
     db.session.commit()
 
-    # api_id = request.json.get('apiId')
-    # user_id = request.json.get('userId')
-    # new_diet = Diets(diet_name=diet_name, diet_type=diet_type, user_id=user_id)
-    # db.session.add(new_diet)
-    # db.session.commit()
+
     diets = Diets.query.all()
     return render_template('display_diets.html', form=form, result=result, diet_name=diet_name, diet_type=diet_type, diets=diets)
 
