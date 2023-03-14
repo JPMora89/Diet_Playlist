@@ -167,7 +167,7 @@ def food_search():
 
 
 @app.route('/', methods=['GET', 'POST'])
-def meals():
+def diets():
     form = MakeOwnDietPlanForm()
 
     if form.validate_on_submit():
@@ -176,17 +176,11 @@ def meals():
 
         result = request.form
         flash('New diet created successfully!', 'success')
-        return redirect('display_diet.html', diet_name=diet_name, diet_type=diet_type, result=result)
+        return redirect('/diets', diet_name=diet_name, diet_type=diet_type, result=result)
 
     return render_template('create_diet.html', form=form)
 
 
-@app.route('/display_diets/<int:user_id>')
-def display_diets(user_id):
-    user_diets = Diets.query.filter_by(user_id=user_id).all()
-    result = request.form
-
-    return render_template('display_user_diets.html', diets=user_diets, result=result)
 
 
 
@@ -200,7 +194,7 @@ def display_diets(user_id):
 #     db.session.add(new_diet)
 #     db.session.commit()
 
-@app.route('/display_diets', methods=['GET', 'POST'])
+@app.route('/diets', methods=['GET', 'POST'])
 def show_user_diets():
     form = MakeOwnDietPlanForm()
     diet_name = form.diet_name.data
@@ -212,11 +206,70 @@ def show_user_diets():
     new_diet = Diets(diet_name=diet_name, diet_type=diet_type, user_id=user_id)
     db.session.add(new_diet)        
     db.session.commit()
-
-
+    print(food_data_list)
+    
     diets = Diets.query.all()
     return render_template('display_diets.html', form=form, result=result, diet_name=diet_name, diet_type=diet_type, diets=diets)
 
+@app.route('/diets/update/<int:id>', methods=['GET','POST'])
+def update_user_diets(id):
+    diet_to_update = Diets.query.get_or_404(id)
+    if request.method == 'POST':
+        diet_to_update
+    
+    user_id = g.user.id
+
+    return render_template('display_diets.html', diets=diets)
+
+@app.route('/diets/delete/<int:id>', methods=['GET', 'POST'])
+def delete_user_diets(id):
+    diet_to_delete = Diets.query.get_or_404(id)
+    
+    try:
+        db.session.delete(diet_to_delete)
+        db.session.commit()
+        return render_template ('display_diets.html', diet_to_delete=diet_to_delete)
+    except:  
+        return "There was a problem deleting the diet"  
+# flash error message
+
+
+
+@app.route('/diets/<int:id>')
+def display_diets(id):
+    user_id = g.user.id
+    user_diet = Diets.query.get_or_404(id)
+    result = request.form
+    
+
+    return render_template('display_user_diets.html', user_diet=user_diet, result=result)
+
+
+# Showing foods in specific diets
+@app.route('/diets/<int:id>', methods=['POST'])
+def add_food_to_diets(id):
+    user_id = g.user.id
+    user_diets = Diets.query.filter_by(user_id=user_id).all()
+    result = request.form
+
+    return render_template('display_user_diets.html', user_diets=user_diets, result=result)
+
+# deleting foods from a specific diet
+# @app.route('/diets/delete/<int:id>', methods=['GET'])
+# def delete(id):
+#     user_id = g.user.id
+#     user_diets = Diets.query.filter_by(user_id=user_id).all()
+#     result = request.form
+
+#     return render_template('display_user_diets.html', user_diets=user_diets, result=result)
+
+@app.route('/diets/<int:diet_id>', methods=['PUT'])
+def update_diets(diet_id):
+    user_id = g.user.id
+    diets = Diets.query.filter_by(user_id=user_id).all()
+    result = request.form
+    diet = [diet for diet in diets if diet.id == diet_id]
+    return render_template('display_user_diets.html', diets=diets, result=result, diet=diet)
 
 
     

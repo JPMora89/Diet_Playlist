@@ -13,11 +13,11 @@
     <tbody>
 {% for diet in diets %}
         <tr>
-            <td id="diet_name">{{diet.diet_name}} <a href="/display_diets/<int:user_id>">go to it</a></td>
+            <td >{{diet.diet_name}} <a href="/diets/{{diet.id}}" >go to it</a> <a href="/diets/delete/{{diet.id}}" type="button" class="btn btn-danger">Delete</a></td>
             <td>{{diet.diet_type}}</td>
         </tr>
     </tbody>
-
+<!-- use button for delete -->
     
   {% endfor %}
 </table>

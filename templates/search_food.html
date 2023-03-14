@@ -25,9 +25,9 @@
                 {% endfor %}
                 
             </td>
-
-            <td>
-                <form action="/display_diets" method="POST">
+            
+            <td> 
+                <form action="/diets" method="POST" id="user_diets">
                     {% for field in form
                         if field.widget.input_type != 'hidden' %}
                         <p>
@@ -54,4 +54,4 @@
 </div>
 {% endblock %}
 
-<!-- <script src="/static/app.js"></script> -->
+<script src="/static/app.js"></script>

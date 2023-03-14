@@ -26,7 +26,7 @@ class User(db.Model):
     
     foods = db.relationship('Food', 
                             backref='user', lazy=True)
-    # likes = db.relationship('Like', 
+    # diets = db.relationship('Diets', 
     #                         backref='user', lazy=True)
 
     def __repr__(self):
@@ -85,7 +85,8 @@ class Food(db.Model):
         db.Integer,
         db.ForeignKey('users.id', ondelete='CASCADE'),
         nullable=False)
-    
+    # as a foreign key relate to diet
+    # diets = db.relationship('Diets')
     label = db.Column(db.Text, nullable=False)
     nutrition = db.Column(db.String(255), nullable=False)
     image_url = db.Column(db.String, nullable=False)
@@ -96,12 +97,18 @@ class Diets(db.Model):
     __tablename__ = 'diets'
 
     id = db.Column(db.Integer, primary_key=True)
-    diet_name = db.Column(db.Text, nullable=False)
-    diet_type = db.Column(db.Text, nullable=False)
+    diet_name = db.Column(db.Text, nullable=True)
+    diet_type = db.Column(db.Text, nullable=True)
     user_id = db.Column(
         db.Integer,
         db.ForeignKey('users.id', ondelete='CASCADE'),
         nullable=False)
+    # food_id = db.Column(
+    #     db.Integer,
+    #     db.ForeignKey('foods.id', ondelete='cascade'),
+    #     unique=True
+    # )
+
    
     def __init__(self, diet_name, diet_type, user_id):
         self.diet_name = diet_name
@@ -109,4 +116,4 @@ class Diets(db.Model):
         self.user_id = user_id
 
     def __repr__(self):
-        return '<Diet {}>'.format(self.diet_name)
+        return '<Diet %r>' % self.id
