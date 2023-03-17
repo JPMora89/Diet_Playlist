@@ -4,7 +4,7 @@
 
 <form action="/diets" method="POST" type="text" id="DietName">
     <label for="DietName">Diet Name:</label>
-    
+  {{ form.hidden_tag() }}
   {% for field in form
     if field.widget.input_type != 'hidden' %}
     <p>
@@ -21,4 +21,4 @@
 {{meal_type}}
 {% endblock %}
 
-<!-- <script src="/static/app.js"></script> -->
+<script src="/static/app.js"></script>

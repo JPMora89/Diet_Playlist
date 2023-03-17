@@ -25,28 +25,23 @@
                 {% endfor %}
                 
             </td>
-            
+            <!-- check to see field values -->
             <td> 
+                
                 <form action="/diets" method="POST" id="user_diets">
                     {% for field in form
                         if field.widget.input_type != 'hidden' %}
                         <p>
                             {{field}}
                         </p>
+
+                        
                         {% endfor %} 
-                        <input type="submit">
+                        <!-- <input action="/diets/" type="submit"> -->
+                        <button action="/diets/{{diet_id}}" class="submitbutton">Submit</button>
                 </form>
             </td>
-            <!-- {% if food.api_id in food_likes %}    
-            <td class="align-middle">
-                <button class="like-button btn btn-secondary liked" data-api-id="{{ food.api_id }}" data-user-id="{{ user_id }}" style="width:100%">Unlike</button></td>
 
-            {% else %}
-            <td class="align-middle">
-                <button class="like-button btn btn-primary" data-api-id="{{ food.api_id }}" data-user-id="{{ user_id }}" style="width:100%">Like</button>
-            </td>
-
-            {% endif %} -->
         </tr>
     {% endfor %}
     </tbody>

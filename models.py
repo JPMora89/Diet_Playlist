@@ -109,6 +109,7 @@ class Diets(db.Model):
     #     unique=True
     # )
 
+
    
     def __init__(self, diet_name, diet_type, user_id):
         self.diet_name = diet_name
@@ -117,3 +118,10 @@ class Diets(db.Model):
 
     def __repr__(self):
         return '<Diet %r>' % self.id
+    
+    # create new model with diet and foods
+
+    # id
+    # Foodid
+    # diet id
+ 

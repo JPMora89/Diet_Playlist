@@ -4,7 +4,6 @@ import os
 from flask import Flask, render_template, request, flash, redirect, session, g
 from flask_debugtoolbar import DebugToolbarExtension
 # from wtforms_sqlalchemy.fields import QuerySelectField
-
 from sqlalchemy.exc import IntegrityError
 
 from forms import CreateUserForm, LoginForm, MakeOwnDietPlanForm, ChooseDietForm
@@ -154,14 +153,38 @@ def food_search():
                             'nutrition': nutrition_list})
             
             user_id = g.user.id
-    
-    form = ChooseDietForm()
-    diet_from_db = db.session.query(Diets.diet_name)
+        
+        # diet = Diets.query.all()
+        # form = ChooseDietForm(request.POST, obj=diet)
+        
+            
+        form = ChooseDietForm()
+        # diet_from_db = db.session.query(Diets.id, Diets.diet_name)
+        # form.diet_options.choices = diet_from_db
+        form.diet_options.choices = [(g.id, g.diet_name) for g in Diets.query.order_by('diet_name')]
 
-    form.options.choices = diet_from_db
-    food_likes = [food.api_id for food in User.query.get(user_id).foods]
+        diet_id = [(g.id) for g in Diets.query.order_by('diet_name')]
+        # diet_id = request._load_form_data
+        # for diet in Diets.query.order_by('diet_name'):
+        #     for g.id in diet:
+            
+        #         diet_id = g.id 
+# def select_diet(request, id): 
+        
+        
+        return render_template('search_food.html', food_list=food_data_list, user_id= user_id, form=form, diet_id=diet_id)
     
-    return render_template('search_food.html', food_list=food_data_list, user_id= user_id, form=form, diet_from_db=diet_from_db)
+
+
+# @app.route('/search_food', methods=['GET', 'POST'])
+
+    
+#     # specific_diet = 
+#     # # form.diet_options.choices = diet_from_db
+#     # # diet_from_db
+#     # user_foods = [food.api_id for food in User.query.get(user_id).foods]
+    
+#     return render_template('search_food.html', diet=diet, form=form)
 
 
 
@@ -211,6 +234,7 @@ def show_user_diets():
     diets = Diets.query.all()
     return render_template('display_diets.html', form=form, result=result, diet_name=diet_name, diet_type=diet_type, diets=diets)
 
+# bring user back to create diet form and let them update
 @app.route('/diets/update/<int:id>', methods=['GET','POST'])
 def update_user_diets(id):
     diet_to_update = Diets.query.get_or_404(id)
@@ -221,7 +245,8 @@ def update_user_diets(id):
 
     return render_template('display_diets.html', diets=diets)
 
-@app.route('/diets/delete/<int:id>', methods=['GET', 'POST'])
+@app.route('/diets/delete/<int:id>', methods=['DELETE'])
+
 def delete_user_diets(id):
     diet_to_delete = Diets.query.get_or_404(id)
     

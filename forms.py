@@ -49,4 +49,4 @@ def DietQuery():
     return Diets.query
 
 class ChooseDietForm(FlaskForm):
-    options = SelectField("User Diets")
+    diet_options = SelectField("User Diets", coerce=int)
