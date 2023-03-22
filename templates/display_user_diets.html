@@ -12,13 +12,15 @@
       </thead>
     <tbody>
 {% for diet in user_diets %}
+{% for food in foods %}
         <tr>
-            <td>{{diet.name}}</td>
+            <td>{{diet_name}}</td>
+            <li>{{food.name}} </li>
             <td>{{diet.diet_type}}</td>
         </tr>
     </tbody>
-
     
+  {% endfor %}
   {% endfor %}
 </table>
 

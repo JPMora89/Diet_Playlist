@@ -120,7 +120,20 @@ class Diets(db.Model):
         return '<Diet %r>' % self.id
     
     # create new model with diet and foods
+class FoodinDiet(db.Model):
+    """User food in specific diets"""
 
+    __tablename__ = 'Food_in_diet'
+
+    id = db.Column(db.Integer, primary_key=True)
+    food_id = db.Column(
+        db.Integer,
+        db.ForeignKey('foods.id', ondelete='CASCADE'),
+        nullable=False)
+    diet_id = db.Column(
+        db.Integer,
+        db.ForeignKey('diets.id', ondelete='CASCADE'),
+        nullable=False)
     # id
     # Foodid
     # diet id
