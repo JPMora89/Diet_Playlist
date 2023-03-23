@@ -15,7 +15,9 @@
     </thead>
     <tbody>
     {% for food in food_list %}
-        <tr id="foodItem" data-name="{{food.label}}" data-image="{{food.image_url}}" data-api-id="{{ food.api_id }}" data-user-id="{{ user_id }}">
+
+    
+        <tr class="tableRow" id="foodItem" data-name="{{food.label}}" data-image="{{food.image_url}}" data-api-id="{{ food.api_id }}" data-user-id="{{ user_id }}" data-nutrition="{{food.nutrition}}">
             <td>{{ food.label }}</td>
             <td><img src="{{ food.image_url }}" alt="" height="300" width="300"></td>
             <td>
@@ -28,7 +30,7 @@
             <!-- check to see field values -->
             <td> 
                 
-                <form action="/diets/diet_id" method="POST" id="user_diets">
+                <form action="" method="POST" id="user_diets">
                     {% for field in form
                         if field.widget.input_type != 'hidden' %}
                         <p>
@@ -38,7 +40,7 @@
                         
                         {% endfor %} 
                         <!-- <input action="/diets/" type="submit"> -->
-                        <button action="/diets/{{diet_id}}" class="submitbutton" >Submit</button>
+                        <button action="" class="submitbutton" >Submit</button>
                 </form>
             </td>
 
