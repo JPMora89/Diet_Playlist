@@ -6,6 +6,7 @@
   <link rel="icon" href="/static/images/icon.png">
   <title>Nutritional INFO for your food</title>
 
+  <link rel="stylesheet" href="/static/stylesheets/style.css">
   <link rel="stylesheet"
         href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
   <script src="https://unpkg.com/jquery"></script>
@@ -18,7 +19,7 @@
   <link rel="shortcut icon" href="/static/favicon.ico">
 </head>
 
-<body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}{% endblock %}" id="wholebody">
 <nav class="navbar navbar-expand">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -31,7 +32,7 @@
       </a>
       <li>
         <form class="navbar-form navbar-right" action="/search_food">
-          <input name="q" class="form-control" placeholder="Search Food" id="search"> <button action="/search_food">Look it up!</button>
+          <input id="forminput" name="q" class="form-control" placeholder="Search Food" id="search"> <button id="lookupbutton" action="/search_food">Look it up!</button>
           <button class="btn btn-default">
             <span class="fa fa-search"></span>
           </button>
@@ -43,11 +44,11 @@
       {% else %}
 
       <li>
-        <a href="/">
-          <img src="/static/images/group.png" alt="{{ g.user.firstname }}">
-        </a>
+        <!-- <a href="/">
+          <img id="navbargrouplogo" src="/static/images/group.png" alt="{{ g.user.firstname }}">
+        </a> -->
       </li>
-      <li><a href="/logout">Log out</a></li>
+      <li><a id="logoutclick" href="/logout" class="btn btn-outline-primary">Log out</a></li>
         
       {% endif %}
     </ul>
@@ -59,6 +60,7 @@
   {% endfor %}
 
   {% block content %}
+
   {% endblock %}
 
 </div>

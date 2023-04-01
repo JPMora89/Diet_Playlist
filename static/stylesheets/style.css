@@ -1,0 +1,478 @@
+/* .homepagebackground {
+    /* background-image: url(/static/images/homepagebackground.webp); */
+    /* min-height: 1000px;
+    width: 100%;
+    /* overflow: auto; */
+    /* background-position: center 80px;
+    position: relative;
+    
+    min-width: 1500px; */ 
+/* } */ 
+
+.homepagebutton {
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+    margin: 20px;
+}
+/* 
+* {
+    background-color: #f9f9f9;
+} */
+.homepagebody {
+    background-image: url(/static/images/hompagebackground.webp);
+    min-height: 1200px;
+    margin-top: 100px;
+    width: 100%;
+    overflow: auto;
+    background-position: center 80px;
+    position: relative;
+    background-repeat: no-repeat;
+    min-width: 1500px;
+    background-size: cover;
+
+}
+
+.homepageTitle {
+    margin-bottom: 30px;
+    margin-left: 500px;
+    margin-top: 100px;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.homepagePhrase {
+    margin-bottom: 10px;
+    /* margin-left: 300px; */
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.nutrientfontcolor {
+    color: black;
+    background-color: #772323;
+}
+
+.nutrientdatafontcolor {
+    background-color: #f9f9f9;
+}
+
+/* html, body {
+    background-color: #f9f9f9;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  } */
+
+  /* .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 5px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+    /* img: { width: 100%; height: auto; } */
+  /* } */ 
+
+  .createdietform {
+    justify-content: center;
+    align-content: center;
+    margin-left: 250px;
+    font-size: 40px;
+    z-index: 25;
+    /* margin-top: 100px; */
+    position: absolute;
+    margin-top: 200px;
+    margin-right: 100px;
+  }
+
+  .createdietheader {
+    justify-content: center;
+    align-content: center;
+    margin-left: 400px;
+  }
+
+  .dietformcontainer {
+    height: 1000px;
+    width: 1000px;
+    margin-left: 200px;
+    background-image: url(/static/images/DietPlaylist.png) ;
+    background-size: cover;
+
+  }
+
+  /* .formcontainer {
+    margin-top: 100px;
+  } */
+/* 
+  #DietName.createdietform {
+    margin-top: 100px;
+  } */
+
+  .displaydietsheader {
+    margin-left: 400px;
+  }
+
+.DietName {
+    margin-top: 100px;
+}
+
+.createdietbody {
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 100%;
+}
+
+.delete-button {
+    margin-left: 200px;
+}
+
+.specificdietinfo {
+    margin-left: 200px;
+}
+
+.dietinfotablerow {
+    justify-content: space-evenly;
+}
+
+#displaydietstable {
+    background-color: #f9f9f9;
+}
+
+#displaydiets {
+    background-color: #f9f9f9;
+}
+
+#lookupbutton {
+    margin-left: 50px;
+}
+
+#navbargrouplogo {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/* #forminput {
+    padding-left: 25px;
+    padding-right: 25px;
+} */
+
+#logoutclick {
+    margin-left: 600px;
+
+}
+
+#dietdescriptions {
+    margin-left: 500px;
+    justify-content: center;
+}
+
+.createdietheadline {
+    margin-left: 500px;
+}
+
+.position-relative {
+    background-color: #f9f9f9;
+}
+
+#wholebody {
+    background-color: #f9f9f9;
+}
+
+* {
+    background-color: #f9f9f9;
+}
+
+#submitformcreatediet {
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+#checkoutyourdietsbutton {
+    margin-left: 450px;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+
+.navbar {
+    justify-content: space-evenly;
+   
+}
+
+.userfoodtableheaders {
+    justify-content: center;
+    align-content: center;
+}
+
+.button-danger {
+    background-color: red;
+    border-radius: 10px;
+
+}
+
+table {
+    text-align: center;
+    vertical-align: middle;
+    border: 3px solid black;
+}
+
+.searchfoodtablehead {
+    background-color: #212529 ;
+    
+}
+
+.searchfoodtablerows {
+    background-color: #212529 ;
+    color: #f9f9f9;
+    
+}
+.glow-on-hover {
+    width: 400px;
+    height: 150px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --anime-word-duration: 5s;
+  --hide-loader: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  overflow: hidden;
+  color: #fff;
+}
+
+.section-loader {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 3s;
+  font-family: "Nabla", cursive;
+  z-index: -10;
+}
+
+.section__h2 {
+  font-size: 6em;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+}
+
+.section__span {
+  font-family: "Nabla", cursive;
+}
+
+@keyframes word-anime {
+  0%,
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+  50% {
+    filter: blur(15px);
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.section__span:nth-child(14n + 1) {
+  animation: word-anime var(--anime-word-duration) infinite 0s;
+}
+
+.section__span:nth-child(14n + 2) {
+  animation: word-anime var(--anime-word-duration) infinite 0.1s;
+}
+
+.section__span:nth-child(14n + 3) {
+  animation: word-anime var(--anime-word-duration) infinite 0.2s;
+}
+
+.section__span:nth-child(14n + 4) {
+  animation: word-anime var(--anime-word-duration) infinite 0.3s;
+}
+
+.section__span:nth-child(14n + 5) {
+  animation: word-anime var(--anime-word-duration) infinite 0.4s;
+}
+
+.section__span:nth-child(14n + 6) {
+  animation: word-anime var(--anime-word-duration) infinite 0.5s;
+}
+
+.section__span:nth-child(14n + 7) {
+  animation: word-anime var(--anime-word-duration) infinite 0.6s;
+}
+
+.section__span:nth-child(14n + 8) {
+  animation: word-anime var(--anime-word-duration) infinite 0.7s;
+}
+
+.section__span:nth-child(14n + 9) {
+  animation: word-anime var(--anime-word-duration) infinite 0.8s;
+}
+
+.section__span:nth-child(14n + 10) {
+  animation: word-anime var(--anime-word-duration) infinite 0.9s;
+}
+
+.section__span:nth-child(14n + 11) {
+  animation: word-anime var(--anime-word-duration) infinite 1s;
+}
+
+.section__span:nth-child(14n + 12) {
+  animation: word-anime var(--anime-word-duration) infinite 1.1s;
+}
+
+.section__span:nth-child(14n + 13) {
+  animation: word-anime var(--anime-word-duration) infinite 1.2s;
+}
+
+.section__span:nth-child(14n + 14) {
+  animation: word-anime var(--anime-word-duration) infinite 1.3s;
+}
+
+@media screen and (max-width: 992px) {
+  .section__h2 {
+    font-size: 5em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__h2 {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section__h2 {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .section__h2 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .section__h2 {
+    font-size: 1em;
+  }
+}
+
+.drop {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: #160e0e;
+  z-index: 1000;
+  filter: drop-shadow(0 0 10px white);
+  border-radius: 50%;
+  z-index: 1000;
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
+}
+
+@keyframes snow {
+  0% {
+    top: -2rem;
+  }
+  100% {
+    top: 120%;
+  }
+}

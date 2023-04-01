@@ -80,7 +80,7 @@ class Food(db.Model):
     __tablename__ = 'foods'
 
     id = db.Column(db.Integer, primary_key=True)
-    api_id = db.Column(db.String(100),nullable=False,unique=True)
+    api_id = db.Column(db.String(100),nullable=False)
     user_id = db.Column(
         db.Integer,
         db.ForeignKey('users.id', ondelete='CASCADE'),
@@ -121,9 +121,10 @@ class Diets(db.Model):
     
     # create new model with diet and foods
 class FoodinDiet(db.Model):
+    # make rows unique
     """User food in specific diets"""
 
-    __tablename__ = 'Food_in_diet'
+    __tablename__ = 'food_in_diet'
 
     id = db.Column(db.Integer, primary_key=True)
     food_id = db.Column(
@@ -134,7 +135,10 @@ class FoodinDiet(db.Model):
         db.Integer,
         db.ForeignKey('diets.id', ondelete='CASCADE'),
         nullable=False)
+    food= db.relationship('Food', backref='Food_in_diet')
+    diet = db.relationship('Diets', backref='FoodinDiet')
+    
     # id
     # Foodid
     # diet id
- 
+#  SQLAlchemy many to many

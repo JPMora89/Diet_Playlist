@@ -2,30 +2,34 @@
 {% block content %}
 <h1>Here are your foods!</h1>
 
-<div class="position-relative">
-  <table class="table table-bordered table-dark">
+<div class="position-relative" id="displaydiets">
+  <table class="table table-bordered " id="displaydietstable">
   <thead>
       <tr>
           <th scope="col">Food Name</th>
           <th scope="col">Image</th>
           <th scope="col">Nutrition per 100g</th>
+          <th scope="col">Remove it?</th>
       </tr>
   </thead>
   <tbody>
-  {% for food in foods %}
+  {% for food in food_list %}
   
-      <tr>
-          <td>{{ food.label }}</td>
+      <tr data-id="{{food.api_id}}">
+          <td >{{ food.label }}</td>
           <td ><img src="{{ food.image_url }}" alt="" height="300" width="300"></td>
           
-          <td>
+          <td class="nutrientfontcolor">
               {% for nutrient in food.nutrition %}
-              <li>
+              <li class="nutrientdatafontcolor">
                   {{ nutrient.name }}: {{ nutrient.value}}
               </li>
               {% endfor %}
           </td>
+          <td>
+            <button class="deletefoodbutton">Remove it!</button>
+          </td>
 {% endfor %}
 {% endblock %}
-
+ 
 <script src="/static/app.js"></script>

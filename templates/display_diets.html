@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Here are your diet plans!</h1>
+<h1 class="displaydietsheader">Here are your diet plans!</h1>
+<img src="/static/images/foodheader.jpg" alt="">
 
 <table class="table table-bordered table-dark">
     <thead>
-    <tr>
+    <tr class="userfoodtableheaders">
       <th scope="col">Diet Name</th>
+      <th scope="col">What's in it?</th>
+      <th scope="col">Get rid of it?</th>
       <th scope="col">Type of Diet</th>
 
     </tr>
       </thead>
     <tbody>
 {% for diet in diets %}
-        <tr>
-            <td >{{diet.diet_name}} <a href="/diets/{{diet.id}}" >Go check out this diet!</a> <button type="button" class="delete-button" id="delete-button" data-id="{{diet.id}}">Delete this one! </button></td>
-            <td>{{diet.diet_type}}</td>
+        <tr class="dietinfotablerow">
+            <td >{{diet.diet_name}}  </td>
+            <td><a class="btn btn-outline-primary" href="/diets/{{diet.id}}" >Go check out this diet!</a></td>
+            <td><button type="button" class="button-danger" id="delete-button" data-id="{{diet.id}}">Delete this one! </button></td>
+            
+            <td>{{diet.diet_type}} </td>
         </tr>
     </tbody>
 

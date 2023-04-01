@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body id="homepage" class="homepagebody">
+    
+
+<div class="homepagebackground">
+<h1 class="homepageTitle">Welcome to your nutrition guide!</h1>
+<h2 class="homepagePhrase">Here you can find all the information you need to create your very own diet to match 
+    all of your dietary needs!</h2>
+
+
+<!-- <a class="btn" href="/create_diets">Start your journey here</a> -->
+
+<button class="homepagebutton" onclick="window.location.href='/create_diets';">Start you journey here!</button>
+
+</div>
+</body>
+{% endblock %}
+<script src="/static/app.js"></script>
