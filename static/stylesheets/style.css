@@ -12,15 +12,23 @@
 .homepagebutton {
     position: absolute;
     bottom: 50px;
-    right: 200px;
+    right: 400px;
     margin: 20px;
+    background-color: rgb(241, 170, 82);
+    border-radius: 10px;
+    padding: 10px;
+    /* box-shadow:0 0 15px 4px rgba(78, 77, 76, 0.61); */
+    text-align: center;
+    font-weight: bold;
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5);
+    /* margin-top: 300px; */
 }
 /* 
 * {
     background-color: #f9f9f9;
 } */
-.homepagebody {
-    background-image: url(/static/images/hompagebackground.webp);
+/* .homepagebody {
+    background-image: url(/static/images/homepagebackground.webp);
     min-height: 1200px;
     margin-top: 100px;
     width: 100%;
@@ -30,15 +38,17 @@
     background-repeat: no-repeat;
     min-width: 1500px;
     background-size: cover;
+    z-index: 12;
 
-}
+} */
 
 .homepageTitle {
     margin-bottom: 30px;
-    margin-left: 500px;
-    margin-top: 100px;
+    margin-left: 400px;
+    margin-top: 150px;
     width: 100%;
     background-color: #f9f9f9;
+    font-weight: bold;
 }
 
 .homepagePhrase {
@@ -46,6 +56,7 @@
     /* margin-left: 300px; */
     width: 100%;
     background-color: #f9f9f9;
+    padding: 60px;
 }
 
 .nutrientfontcolor {
@@ -126,6 +137,8 @@
 
   .displaydietsheader {
     margin-left: 400px;
+    margin-top: 75px;
+    margin-bottom: 75px;
   }
 
 .DietName {
@@ -159,7 +172,19 @@
 }
 
 #lookupbutton {
-    margin-left: 50px;
+    margin-left: 265px;
+    display: inline;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    /* box-shadow:0 0 15px 4px rgba(65, 64, 64, 0.527); */
+    background-color: rgb(241, 170, 82);
+    font-weight: bold;
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5);
+   
+}
+.form-control {
+    border: solid 10px rgba(209, 141, 62, 0.06);
 }
 
 #navbargrouplogo {
@@ -180,6 +205,8 @@
 #dietdescriptions {
     margin-left: 500px;
     justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
 }
 
 .createdietheadline {
@@ -201,6 +228,13 @@
 #submitformcreatediet {
     margin-left: 150px;
     margin-top: 100px;
+    background-color: rgb(241, 170, 82);
+    border-radius: 10px;
+    padding: 10px;
+    /* box-shadow:0 0 15px 4px rgba(78, 77, 76, 0.61); */
+    text-align: center;
+    font-weight: bold;
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5);
 }
 
 #checkoutyourdietsbutton {
@@ -214,12 +248,15 @@
 
 .navbar {
     justify-content: space-evenly;
+ 
    
 }
 
 .userfoodtableheaders {
     justify-content: center;
     align-content: center;
+    background-color: #212529 ;
+    color: #f9f9f9;
 }
 
 .button-danger {
@@ -246,7 +283,7 @@ table {
 }
 .glow-on-hover {
     width: 400px;
-    height: 150px;
+    height: 125px;
     border: none;
     outline: none;
     color: #fff;
@@ -263,11 +300,11 @@ table {
     position: absolute;
     top: -2px;
     left:-2px;
-    background-size: 400%;
+    background-size: 100%;
     z-index: -1;
     filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
     animation: glowing 20s linear infinite;
     opacity: 0;
     transition: opacity .3s ease-in-out;
@@ -304,7 +341,7 @@ table {
     100% { background-position: 0 0; }
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap"); */
 
 * {
   margin: 0;
@@ -317,7 +354,7 @@ table {
   --hide-loader: none;
 }
 
-body {
+/* body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -327,9 +364,9 @@ body {
   background: #111;
   overflow: hidden;
   color: #fff;
-}
+} */
 
-.section-loader {
+/* .section-loader {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -341,7 +378,7 @@ body {
   transition: all 3s;
   font-family: "Nabla", cursive;
   z-index: -10;
-}
+} */
 
 .section__h2 {
   font-size: 6em;
@@ -352,10 +389,11 @@ body {
 }
 
 .section__span {
-  font-family: "Nabla", cursive;
+  /* font-family: "Nabla", cursive; */
+  font-family: 'Times New Roman', Times, serif;
 }
 
-@keyframes word-anime {
+/* @keyframes word-anime {
   0%,
   100% {
     opacity: 1;
@@ -367,7 +405,7 @@ body {
     opacity: 0;
     transform: scale(2);
   }
-}
+} */
 
 .section__span:nth-child(14n + 1) {
   animation: word-anime var(--anime-word-duration) infinite 0s;
@@ -468,11 +506,115 @@ body {
     fill-mode;
 }
 
-@keyframes snow {
+/* @keyframes snow {
   0% {
     top: -2rem;
   }
   100% {
     top: 120%;
   }
+} */
+
+.glow-on-hover {
+    border-radius: 15px;
+    background-color: rgb(241, 170, 82);
 }
+
+.gobacktodietsbutton {
+    align-items: center;
+    justify-content: center;
+    margin-left: 5000px;
+    padding-left: 1000px;
+}
+
+#navbarpagetitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 100px;
+}
+
+#forminput {
+    padding: 10px;
+    margin: 10px;
+    /* box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5); */
+    width: 500px;
+    background-color: rgb(241, 170, 82);
+    text-align: center;
+    font-weight: bolder;
+    margin-left: 50px;
+    border-width: 10px black;
+    
+}
+  
+#forminput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(24, 23, 23);
+    opacity: 1; 
+  }
+
+  #homepageimage {
+    margin-bottom: 600px;
+    position: absolute;
+    opacity: 5;
+  }
+
+  .container-fluid {
+    display: inline;
+  }
+
+  .homepageinfodiv {
+    z-index: 4000;
+    color: #212529;
+    font-size: 175px;
+  }
+
+.homepageinfopart1 {
+    z-index: 4000;
+    font-size: 50px;
+    
+}
+.checkoutdietsdivider {
+    /* margin-left: 500px; */
+    margin-top: -75px;
+    border: solid black 2px;
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 600px;
+    background-color: rgb(241, 170, 82);
+    border-radius: 15px;
+}
+
+#createyourowndietbutton {
+    margin-left: 10px;
+    text-align: center;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 10px;
+    background-color: #000;
+    color: #f9f9f9;
+    width: 400px;
+    font-family: 'Times New Roman', Times, serif;
+    
+
+}
+
+.displayuserdietstable {
+    justify-content: center;
+    align-content: center;
+    background-color: #212529 ;
+    color: #f9f9f9;
+}
+
+.displayuserdietstabletitle {
+    margin-left: 500px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    font-weight: bold;
+}
+
+.searchfoodtitle {
+    margin-left: 450px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    font-weight: bold;
+}
+

@@ -24,18 +24,19 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="/" class="navbar-brand">
-        <img src="/static/images/logo.png" height="30px" width="30px" alt="logo">
-        <span>Your Nutrition Guide</span>
+        <img src="/static/images/logo.png" height="60px" width="60px" alt="logo">
+        <span id="navbarpagetitle">Your Nutrition Guide</span>
       </a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       </a>
-      <li>
+      <li class="searchforfoodform">
         <form class="navbar-form navbar-right" action="/search_food">
-          <input id="forminput" name="q" class="form-control" placeholder="Search Food" id="search"> <button id="lookupbutton" action="/search_food">Look it up!</button>
-          <button class="btn btn-default">
+          <input id="forminput" name="q" class="form-control" placeholder="Search Food" id="search"> 
+          <button id="lookupbutton" action="/search_food">Look it up!</button>
+          <!-- <button class="btn btn-default">
             <span class="fa fa-search"></span>
-          </button>
+          </button> -->
         </form>
       </li>
       {% if not g.user %}

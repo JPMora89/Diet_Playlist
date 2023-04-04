@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 <div>
-    <h1>See something you like?</h1>
-</div>    
+    <h1 class="searchfoodtitle">See something you like?</h1>
+</div>  
+<div>
+    <a class="btn btn-outline-primary" href="/diets">Go back to your diets!</a>
+</div>  
 <div class="position-relative">
     <table class="table table-bordered" id="foodtable">
         <thead class="searchfoodtablehead">
         <tr class="searchfoodtablerows">
-            <th scope="col">Label</th>
+            <th scope="col">Food Name</th>
             <th scope="col">Image</th>
             <th scope="col">Nutritions per 100g</th>
             <th scope="col">Add it to your diet plan!</th>
@@ -28,7 +31,7 @@
                 
             </td>
             <!-- check to see field values -->
-            <td> 
+           <td> 
                 
                 <form action="/diets" method="POST" id="user_diets">
                     {% for field in form

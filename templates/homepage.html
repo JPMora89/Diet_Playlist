@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<body id="homepage" class="homepagebody">
+<body  class="homepagebody">
     
 
 <div class="homepagebackground">
 <h1 class="homepageTitle">Welcome to your nutrition guide!</h1>
 <h2 class="homepagePhrase">Here you can find all the information you need to create your very own diet to match 
     all of your dietary needs!</h2>
-
+<img id="homepageimage" src="/static/images/homepagebackground.webp" alt="">
 
 <!-- <a class="btn" href="/create_diets">Start your journey here</a> -->
 
-<button class="homepagebutton" onclick="window.location.href='/create_diets';">Start you journey here!</button>
+<button class="homepagebutton" onclick="window.location.href='/create_diets';">Start your journey here!</button>
+
+<h3 class="homepageinfopart1">Tune every meal to meet each of your dietary needs</h3>
+<h3 class="homepageinfopart2">Check thousands of food items to find the ones that fit your needs!</h3>
 
 </div>
 </body>
