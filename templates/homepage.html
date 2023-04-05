@@ -1,3 +1,5 @@
+
+
 {% extends 'base.html' %}
 {% block content %}
 
@@ -5,18 +7,24 @@
     
 
 <div class="homepagebackground">
-<h1 class="homepageTitle">Welcome to your nutrition guide!</h1>
+<h1 class="homepageTitle"> Welcome to your nutrition guide! <span><img class="foodplateimage" src="/static/images/foodplate.jpg" alt=""></span> </h1>
 <h2 class="homepagePhrase">Here you can find all the information you need to create your very own diet to match 
     all of your dietary needs!</h2>
-<img id="homepageimage" src="/static/images/homepagebackground.webp" alt="">
-
+    <div class="homepageimagediv" >
+<img id="homepageimage" src="/static/images/Homepagebackground.png" alt="">
+</div>
 <!-- <a class="btn" href="/create_diets">Start your journey here</a> -->
 
+
+<div class="homepagetaglines">
+
+
+<h3 class="homepageinfopart1"><span><img id="forkandspoon" src="/static/images/forkandspoon.png" alt=""></span>Tune every meal to meet each of your dietary needs</h3>
+<h3 class="homepageinfopart2"><span><img id="forkandspoon" src="/static/images/forkandspoon.png" alt=""></span> Check thousands of food items to find the ones that fit your needs!</h3>
+<h3 class="homepageinfopart1"><span><img id="forkandspoon" src="/static/images/forkandspoon.png" alt=""></span>Hitting you nutritional goals has never been easier!</h3>
 <button class="homepagebutton" onclick="window.location.href='/create_diets';">Start your journey here!</button>
 
-<h3 class="homepageinfopart1">Tune every meal to meet each of your dietary needs</h3>
-<h3 class="homepageinfopart2">Check thousands of food items to find the ones that fit your needs!</h3>
-
+</div>
 </div>
 </body>
 {% endblock %}

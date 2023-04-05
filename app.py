@@ -178,9 +178,13 @@ def food_search():
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
+    if g.user:
+       
+     return render_template('homepage.html')
+    else:
+        return render_template('home-anon.html') 
 
-
-    return render_template('homepage.html')
+   
 
 @app.route('/create_diets', methods=['GET', 'POST'])
 def diets():

@@ -102,25 +102,25 @@ table.addEventListener("click", (event) => {
 
 
 // use put because you're updating 
-const form = document.querySelector("user_diets");
+// const form = document.querySelector("user_diets");
 
-form.addEventListener("click", (event) => {
-  if (event.target.classList.contains("deletefoodbutton")) {
-    const id = event.target.dataset.id;
-    const diet_value = document.getElementById('diet_options').value;
-    console.log(diet_value)
-    console.log(id)
-    axios
-      .get(`/diets/${}`, diet_value)
-      .then((response) => {
-        console.log('diet value sent successfully')
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("Error deleting data.");
-      });
-  }
-});
+// form.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("deletefoodbutton")) {
+//     const id = event.target.dataset.id;
+//     const diet_value = document.getElementById('diet_options').value;
+//     console.log(diet_value)
+//     console.log(id)
+//     axios
+//       .get(`/diets/${}`, diet_value)
+//       .then((response) => {
+//         console.log('diet value sent successfully')
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//         alert("Error deleting data.");
+//       });
+//   }
+// });
 
 // const $ = document;
 // let container = $.getElementsByClassName("cont")[0];

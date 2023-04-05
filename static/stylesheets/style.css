@@ -10,10 +10,10 @@
 /* } */ 
 
 .homepagebutton {
-    position: absolute;
-    bottom: 50px;
-    right: 400px;
-    margin: 20px;
+    position: relative;
+    /* bottom: -400px;
+    right: 600px; */
+    /* margin: 20px; */
     background-color: rgb(241, 170, 82);
     border-radius: 10px;
     padding: 10px;
@@ -22,7 +22,13 @@
     font-weight: bold;
     box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5);
     /* margin-top: 300px; */
+    z-index: 5000;
+    /* margin-block: auto 20px; */
+    /* bottom: 100px; */
+    margin-top: 150px;
 }
+
+
 /* 
 * {
     background-color: #f9f9f9;
@@ -42,10 +48,25 @@
 
 } */
 
+.homepagetaglines {
+    margin-left: 600px;
+    margin-top: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+}
+
+.createorcheckoutdietdiv {
+    display: flex;
+    flex-direction: column;
+    margin-block: 75px;
+}
+
 .homepageTitle {
     margin-bottom: 30px;
-    margin-left: 400px;
-    margin-top: 150px;
+    margin-left: 300px;
+    margin-top: 50px;
     width: 100%;
     background-color: #f9f9f9;
     font-weight: bold;
@@ -56,7 +77,7 @@
     /* margin-left: 300px; */
     width: 100%;
     background-color: #f9f9f9;
-    padding: 60px;
+    padding: 20px;
 }
 
 .nutrientfontcolor {
@@ -121,7 +142,7 @@
   .dietformcontainer {
     height: 1000px;
     width: 1000px;
-    margin-left: 200px;
+    margin-left: 175px;
     background-image: url(/static/images/DietPlaylist.png) ;
     background-size: cover;
 
@@ -165,6 +186,7 @@
 
 #displaydietstable {
     background-color: #f9f9f9;
+    border-radius: 5px;
 }
 
 #displaydiets {
@@ -219,11 +241,11 @@
 
 #wholebody {
     background-color: #f9f9f9;
-}
-
-* {
+} 
+/* 
+.homepagebody {
     background-color: #f9f9f9;
-}
+}  */
 
 #submitformcreatediet {
     margin-left: 150px;
@@ -238,19 +260,32 @@
 }
 
 #checkoutyourdietsbutton {
-    margin-left: 450px;
+    /* margin-left: 450px; */
     justify-content: center;
     font-size: 40px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    /* margin-top: 100px;
+    margin-bottom: 100px; */
+    /* margin-block: 20px; */
+    margin-top: 25px;
+    /* margin-left: 300px;
+    margin-right: ; */
+    width: 500px;
+    align-items: center;
+    margin-left: 400px;
+    border-radius: 15px;
+    background-color: rgb(241, 170, 82);
 
 }
 
-.navbar {
+#checkoutyourdietsbutton:hover {
+    background-color: red;
+}
+
+/* .navbar {
     justify-content: space-evenly;
  
    
-}
+} */
 
 .userfoodtableheaders {
     justify-content: center;
@@ -279,7 +314,8 @@ table {
 .searchfoodtablerows {
     background-color: #212529 ;
     color: #f9f9f9;
-    
+}
+/*     
 }
 .glow-on-hover {
     width: 400px;
@@ -343,16 +379,16 @@ table {
 
 /* @import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap"); */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
+} */
+/* 
 :root {
   --anime-word-duration: 5s;
   --hide-loader: none;
-}
+} */
 
 /* body {
   display: flex;
@@ -380,7 +416,7 @@ table {
   z-index: -10;
 } */
 
-.section__h2 {
+/* .section__h2 {
   font-size: 6em;
   color: #fff;
   text-transform: uppercase;
@@ -390,8 +426,8 @@ table {
 
 .section__span {
   /* font-family: "Nabla", cursive; */
-  font-family: 'Times New Roman', Times, serif;
-}
+  /* font-family: 'Times New Roman', Times, serif;
+} */ */
 
 /* @keyframes word-anime {
   0%,
@@ -406,7 +442,7 @@ table {
     transform: scale(2);
   }
 } */
-
+/* 
 .section__span:nth-child(14n + 1) {
   animation: word-anime var(--anime-word-duration) infinite 0s;
 }
@@ -504,7 +540,7 @@ table {
   z-index: 1000;
   animation: name duration timing-function delay iteration-count direction
     fill-mode;
-}
+} */
 
 /* @keyframes snow {
   0% {
@@ -515,10 +551,10 @@ table {
   }
 } */
 
-.glow-on-hover {
+/* .glow-on-hover {
     border-radius: 15px;
     background-color: rgb(241, 170, 82);
-}
+} */ */
 
 .gobacktodietsbutton {
     align-items: center;
@@ -551,14 +587,50 @@ table {
     opacity: 1; 
   }
 
+#forkandspoon {
+    height: 50px;
+    width: 50px;
+}
+
   #homepageimage {
-    margin-bottom: 600px;
+    margin-bottom: 900px;
     position: absolute;
     opacity: 5;
+    margin-top: 100px;
+    display: flex;
+    /* height: 500px;
+    width: 500px; */
+    z-index: 3000;
+    /* box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.205); */
+    margin-right: -100px;
+
+  }
+
+.foodplateimage{
+    /* margin-left: 100px; */
+    padding-left: 25px;
+    box-shadow:0 0  rgba(0, 0, 0, 0.205);
+}
+
+  .homepageimagediv {
+    width: 100%;
+    margin-right: -1000px;
+    
+  }
+
+  .homepageimage2 {
+    position: fixed;
+    margin-left: 1250px;
+    z-index: -200;
+    margin-bottom: 2000px;
+    width: 200px;
+    height: 200px;
   }
 
   .container-fluid {
     display: inline;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .homepageinfodiv {
@@ -567,11 +639,11 @@ table {
     font-size: 175px;
   }
 
-.homepageinfopart1 {
+/* .homepageinfopart1 {
     z-index: 4000;
     font-size: 50px;
     
-}
+} */
 .checkoutdietsdivider {
     /* margin-left: 500px; */
     margin-top: -75px;
@@ -579,21 +651,41 @@ table {
     text-align: center;
     margin-left: 600px;
     margin-right: 600px;
-    background-color: rgb(241, 170, 82);
+    background-color: black;
     border-radius: 15px;
+    color: rgb(241, 170, 82);
 }
 
 #createyourowndietbutton {
-    margin-left: 10px;
+    /* margin-left: 450px;
     text-align: center;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 100px;
     border-radius: 10px;
     background-color: #000;
     color: #f9f9f9;
     width: 400px;
     font-family: 'Times New Roman', Times, serif;
-    
+    /* display: inline; */
+    /* margin-bottom: 10px;
+    width: 400px;
+    height: 125px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    align-content: center;
+    text */ 
+    margin-left: 475px;
+    margin-bottom: -50px;
+    margin-top: 50px;
+    /* border: solid black 1px;
+    background-color: #000;
+    color: #f9f9f9; */
 
 }
 
@@ -616,5 +708,80 @@ table {
     margin-top: 75px;
     margin-bottom: 75px;
     font-weight: bold;
+}
+
+/* header {  
+    background-color: orange;  
+    position: fixed;  
+    left: 0;  
+    right: 0;  
+    top: 5px;  
+    height: 30px;  
+    display: flex;  
+    align-items: center;  
+    box-shadow: 0 0 25px 0 black;  
+    }  
+
+    .navigationbar {
+        display: inline;
+    } */
+
+/* .navbar {
+    display: flex;
+} */
+
+.homepageimage2 {
+    z-index: 50000;
+}
+
+.deletefoodbutton:hover {
+    background-color: red;
+}
+
+#userdietsubmitbutton:hover {
+    background-color: rgb(241, 170, 82);
+}
+
+/* #user-form {
+    margin-left: 100px;
+} */
+
+.join-message {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#signupbutton {
+    margin-top: 50px;
+}
+
+#loginbutton {
+    margin-top: 50px ;
+}
+
+#usersignupbutton {
+    padding-bottom: -50px;
+    margin-left: 500px;
+    margin-right: 50px;
+}
+
+#userloginbutton {
+    border: solid blue 1px;
+}
+
+.homepageTitleanon {
+    margin-left: 200px;
+
+}
+
+.homepageinfopart1 {
+    font-size: 20px;
+    border: 1px black;
+    margin-left: 100px;
+
+}
+.homepageinfopart2 {
+    font-size: 20px;
+    margin-left: 25px;
 }
 
