@@ -18,8 +18,8 @@
   <tbody>
   {% for food in food_list %}
   
-      <tr data-id="{{food.api_id}}">
-          <td >{{ food.label }}</td>
+      <tr class="userfoodstablerow" data-id="{{food.api_id}}">
+          <td class="userfoodnameindiet">{{ food.label }}</td>
           <td ><img src="{{ food.image_url }}" alt="" height="300" width="300"></td>
           
           <td class="nutrientfontcolor">

@@ -21,9 +21,9 @@
 
     
         <tr class="tableRow" id="foodItem" data-name="{{food.label}}" data-image="{{food.image_url}}" data-api-id="{{ food.api_id }}" data-user-id="{{ user_id }}" data-nutrition="{{food.nutrition}}">
-            <td>{{ food.label }}</td>
+            <td class="foodnameinsearchfood">{{ food.label }}</td>
             <td><img src="{{ food.image_url }}" alt="" height="300" width="300"></td>
-            <td>
+            <td class="searchfoodnutritionitems">
                 {% for nutrient in food.nutrition %}
                 
                     <li>{{ nutrient.name }}: {{ nutrient.value}}</li>

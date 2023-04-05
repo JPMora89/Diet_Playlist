@@ -42,7 +42,7 @@ class FoodSearchForm(FlaskForm):
 class MakeOwnDietPlanForm(FlaskForm):
     diet_name = StringField('Diet Name', validators=[DataRequired()])
     diet_type = SelectField('Type of Diet', 
-    choices= [('weight loss', 'Weight Loss'), ('bulking', 'Bulking'), ('maintain', 'Maintain')])
+    choices= [('Weight Loss', 'Weight Loss'), ('Bulking', 'Bulking'), ('Maintain', 'Maintain')])
 
 
 def DietQuery():

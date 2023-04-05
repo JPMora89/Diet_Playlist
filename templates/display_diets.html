@@ -16,11 +16,11 @@
     <tbody>
 {% for diet in diets %}
         <tr class="dietinfotablerow">
-            <td >{{diet.diet_name}}  </td>
+            <td class="dietnameforcreateddiet">{{diet.diet_name}}  </td>
             <td><a class="btn btn-outline-primary" href="/diets/{{diet.id}}" >Go check out this diet!</a></td>
             <td><button type="button" class="button-danger" id="delete-button" data-id="{{diet.id}}">Delete this one! </button></td>
             
-            <td>{{diet.diet_type}} </td>
+            <td class="diettypeforcreateddiet">{{diet.diet_type}} </td>
         </tr>
     </tbody>
 
