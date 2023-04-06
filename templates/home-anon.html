@@ -1,83 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="/static/images/icon.png">
-  <title>Nutrition Guide!</title>
 
-  <link rel="stylesheet"
-        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
-  <script src="https://unpkg.com/jquery"></script>
-  <script src="https://unpkg.com/popper"></script>
-  <script src="https://unpkg.com/bootstrap"></script>
+{% extends 'base.html' %}
+{% block content %}
 
-  <link rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  <link rel="stylesheet" href="/static/stylesheets/style.css">
-  <link rel="shortcut icon" href="/static/favicon.ico">
-</head>
-
-<body class="homepagebody">
-<nav class="navbar navbar-expand">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a href="/" class="navbar-brand">
-        <img src="/static/images/logo.png" height="30px" width="30px" alt="logo">
-        <!-- <span class="homepageTitle">Welcome to your nutrition guide!</span> -->
-      </a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      </a>
-      <li>
-        <form class="navbar-form navbar-right" action="/search_food">
-          <input name="q" class="form-control" placeholder="Search Food" id="search">
-          <button class="btn btn-default">
-            <span class="fa fa-search"></span>
-          </button>
-        </form>
-   
-      </li>
-      {% if not g.user %}
-      <li><a href="/signup">Sign up</a></li>
-      <li><a href="/login">Log in</a></li>
-      {% else %}
-      <li>
-        <a href="/">
-          <img scr="/static/images/user.png" alt="{{ g.user.firstname }}">
-        </a>
-      </li>
-      <li><a href="/logout">Log out</a></li>
-      {% endif %}
-    </ul>
-  </div>
-</nav>
-<!-- <div class="container">
-  {% for category, message in get_flashed_messages(with_categories=True) %}
-  <div class="alert alert-{{ category }}">{{ message }}</div>
-  {% endfor %}
-
-  {% block content %}
-  {% endblock %}
-
-</div> -->
-
-  <div class="homepagebackground">
-    <h1 class="homepageTitleanon">Welcome to your nutrition guide!</h1>
-    <h2 class="homepagePhraseanon">Here you can find all the information you need to create your very own diet to match 
-        all of your dietary needs!</h2>
-        <h3>Sign up now!</h3>    <h3 class="homepageinfopart1">Tune every meal to meet each of your dietary needs</h3>
-    <h3 class="homepageinfopart2">Check thousands of food items to find the ones that fit your needs!</h3>
-    <img class="homepageimage2" src="/static/images/foodplate.jpg" alt="">
-    <img id="homepageimage" src="/static/images/homepagebackground.png" alt="">
-    
-    <!-- <a class="btn" href="/create_diets">Start your journey here</a> -->
-    
-    <button class="homepagebutton" onclick="window.location.href='/signup';">Start your journey here!</button>
+<body  class="homepagebody">
     
 
-    
-    </div>
-    
+<div class="homepagebackground">
+<h1 class="homepageTitle"> Welcome to your nutrition guide! <span><img class="foodplateimage" src="/static/images/foodplate.jpg" alt=""></span> </h1>
+<h2 class="homepagePhrase">Here you can find all the information you need to create your very own diet to match 
+    all of your dietary needs!</h2>
+    <div class="homepageimagediv" >
+<img id="homepageimage" src="/static/images/Homepagebackground.png" alt="">
+</div>
+<!-- <a class="btn" href="/create_diets">Start your journey here</a> -->
+
+
+<div class="homepagetaglines">
+
+
+<h3 class="homepageinfopart1"><span><img id="forkandspoon" src="/static/images/forkandspoon.png" alt=""></span>Tune every meal to meet each of your dietary needs</h3>
+<h3 class="homepageinfopart2"><span><img id="forkandspoon" src="/static/images/forkandspoon.png" alt=""></span> Check thousands of food items to find the ones that fit your needs!</h3>
+<h3 class="homepageinfopart1"><span><img id="forkandspoon" src="/static/images/forkandspoon.png" alt=""></span>Hitting you nutritional goals has never been easier!</h3>
+<button class="homepagebutton" onclick="window.location.href='/signup';">Start your journey here!</button>
+
+</div>
+</div>
 </body>
-</html>
+{% endblock %}
+<script src="/static/app.js"></script>

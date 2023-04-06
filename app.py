@@ -233,8 +233,9 @@ def add_food_to_diet(id):
    
     api_id = request.json.get('apiId')
     user_id = request.json.get('userId')
- 
+#  check to see if food is duplicate
     food = next((food for food in food_data_list if food['api_id'] == api_id), None)
+    
     new_food = Food(
             api_id= food['api_id'],
             user_id=user_id,
@@ -266,14 +267,14 @@ def add_food_to_diet(id):
 
 def delete_user_diets(id):
     diet_to_delete = Diets.query.get_or_404(id)
+    print("*" * 80)
+    print(diet_to_delete)
     # console.log to see if function is being called
-    try:
-        db.session.delete(diet_to_delete)
-        db.session.commit()
-        diets = Diets.query.all()
-        return render_template ('display_diets.html', diets=diets)
-    except:  
-        return flash("There was a problem deleting the diet")
+    db.session.delete(diet_to_delete)
+    db.session.commit()
+    diets = Diets.query.all()
+    return render_template ('display_diets.html', diets=diets)  
+    # return flash("There was a problem deleting the diet")
 # flash error message
 
 
@@ -369,20 +370,23 @@ def display_diets(id):
 # check to see if food is in foodlist
 # # 
 
+# print food to delete
 
-
-@app.route('/diets/<int:id>', methods=['DELETE'])
-def remove_food_from_diet(id):
-    print(request.json)
-    if FoodinDiet.diet_id == id:
-        food_to_delete = FoodinDiet.query.get_or_404("food_id")
-    try:
-        db.session.delete(food_to_delete)
-        db.session.commit()
-        foods = FoodinDiet.query.all()
-        return render_template ('display_user_diets.html', foods=foods)
-    except:  
-        return flash("There was a problem deleting the diet")
+# @app.route('/diets/<int:id>', methods=['DELETE'])
+# def remove_food_from_diet(id):
+#     print("*" * 80)
+#     print(request.json)
+#     # FoodinDiet.diet_id == id:
+#     food_to_delete = FoodinDiet.query(id=id).one()
+#     print(food_to_delete)
+#     print("290", id)
+#     try:
+#         db.session.delete(food_to_delete)
+#         db.session.commit()
+#         foods = FoodinDiet.query.all()
+#         return render_template ('display_user_diets.html', foods=foods)
+#     except:  
+#         return flash("There was a problem deleting the diet")
 
 
 

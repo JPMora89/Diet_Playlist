@@ -86,7 +86,7 @@ table.addEventListener("click", (event) => {
 
 
 
-
+// window
 
     document.querySelectorAll('.tableRow').forEach(item => {
       item.addEventListener('submit', (event) => {
@@ -95,11 +95,14 @@ table.addEventListener("click", (event) => {
         tr = event.target.closest("tr");
         console.log(tr.dataset);
         axios.put(`/diets/update/${diet_value}`, tr.dataset).then((response) => {
+          console.log(response.data)
+          window.location = `/diets/${diet_value}`
           console.log("Food added in diet!");
         });
       })
     })
 
+    // try to do page load from flask
 
 // use put because you're updating 
 // const form = document.querySelector("user_diets");
@@ -152,3 +155,16 @@ table.addEventListener("click", (event) => {
 // };
 
 // main();
+
+
+
+// User deletes foods from specific diet
+
+const userfoodtable = document.getElementById("user_diets")
+
+userfoodtable.addEventListener("click", (event) => {
+  if (event.target.classList.contains("deletefoodbutton")) {
+    const tr = event.target.closest("tr");
+    tr.parentNode.removeChild(tr);
+  }
+});
