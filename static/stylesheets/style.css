@@ -350,7 +350,7 @@ table {
 #navbarpagetitle {
     font-size: 30px;
     font-weight: bold;
-    margin-right: 150px;
+    margin-right: 100px;
 }
 
 #forminput {
@@ -427,9 +427,10 @@ table {
   }
 
   .container-fluid {
-    display: inline;
+    display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    /* width: 100%; */
   }
 
   .homepageinfodiv {
@@ -509,14 +510,17 @@ table {
     font-weight: bold;
 }
 .navbar {
-    display: inline;
+    display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%;
+    /* width: 100%; */
+ 
 }
 /* .searchforfoodform {
-    margin-left: -100px;
-} */
+     margin-left: -100px; 
+     margin-right: -200px; 
+     margin-right: -1000px; 
+  }  */
 
 /* header {  
     background-color: orange;  
@@ -563,23 +567,39 @@ table {
     margin-bottom: 100px;
 }
 
-#signupbutton {
+/* #signupbutton {
     margin-top: 50px;
 }
 
 #loginbutton {
     margin-top: 50px ;
-}
+    /* margin-left: -300px; */
+/* } */ 
 
 #usersignupbutton {
-    padding-bottom: -50px;
-    margin-left: 150px;
+    /* padding-bottom: -50px; */
+    margin-left: -300px;
     margin-right: 10px;
+    display: flex;
+    /* overflow: hidden; */
+    margin-top: 200px;
+    /* margin-top: 100px;
 }
 
-#userloginbutton {
-    border: solid blue 1px;
-}
+/* #userloginbutton { */
+    /* border: solid blue 1px;
+    /* margin-bottom: 25px; */
+    /* margin-left: -100px;
+    padding-bottom: -50px;
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: -200px; */ 
+    padding-bottom: -50px;
+    margin-left: -150px;
+    margin-right: 10px;
+    display: inline;
+    overflow: hidden;
+} */
 
 .homepageTitleanon {
     margin-left: 200px;
@@ -642,10 +662,12 @@ table {
     vertical-align: middle;
 }
 
-.usersignupandlogin {
-    display: inline;
+/* .usersignupandlogin {
+    display: inline-flexbox;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%;
-    justify-content: space-between;
-}
+    width: 100%;  */
+    /* justify-content: space-between;  */
+    /* margin-left: 200px; }   */
+
+ 
