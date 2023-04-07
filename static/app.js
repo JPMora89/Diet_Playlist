@@ -160,11 +160,33 @@ table.addEventListener("click", (event) => {
 
 // User deletes foods from specific diet
 
-const userfoodtable = document.getElementById("user_diets")
+// const userfoodtable = document.getElementById("user_diets")
 
-userfoodtable.addEventListener("click", (event) => {
-  if (event.target.classList.contains("deletefoodbutton")) {
-    const tr = event.target.closest("tr");
-    tr.parentNode.removeChild(tr);
-  }
+// userfoodtable.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("deletefoodbutton")) {
+//     const tr = event.target.closest("tr");
+//     tr.parentNode.removeChild(tr);
+//   }
+// });
+
+
+const deleteFood = (dietId, foodId) => {
+  axios
+    .delete(`/diets/${dietId}/foods/${foodId}`)
+    .then((response) => {
+      console.log(response);
+      window.location.reload();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const deleteButtons = document.querySelectorAll(".deletefoodbutton");
+deleteButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const dietId = window.location.href.split("/").pop();
+    const foodId = button.closest(".userfoodstablerow").dataset.id;
+    deleteFood(dietId, foodId);
+  });
 });

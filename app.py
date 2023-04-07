@@ -20,7 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = True
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "ManchesterUnited")
-app.debug = True
+app.debug = False
 toolbar = DebugToolbarExtension(app)
 connect_db(app)
 
@@ -188,6 +188,10 @@ def homepage():
 
 @app.route('/create_diets', methods=['GET', 'POST'])
 def diets():
+
+    if not g.user:
+        flash("Access unauthorized.", "danger")
+        return redirect("/")
     form = MakeOwnDietPlanForm()
 
     if form.validate_on_submit():
@@ -204,6 +208,10 @@ def diets():
 
 @app.route('/diets', methods=['GET', 'POST'])
 def show_user_diets():
+    if not g.user:
+        flash("Access unauthorized.", "danger")
+        return redirect("/")
+    
     if request.method == 'POST':
         form = MakeOwnDietPlanForm()
         diet_name = form.diet_name.data
@@ -270,6 +278,8 @@ def delete_user_diets(id):
     print("*" * 80)
     print(diet_to_delete)
     # console.log to see if function is being called
+    FoodinDiet.query.filter_by(diet_id=id).delete()
+
     db.session.delete(diet_to_delete)
     db.session.commit()
     diets = Diets.query.all()
@@ -281,6 +291,10 @@ def delete_user_diets(id):
 # Showing foods in specific diets
 @app.route('/diets/<int:id>', methods=['GET'])
 def display_diets(id):
+    
+    if not g.user:
+        flash("Access unauthorized.", "danger")
+        return redirect("/")
     user_id = g.user.id
 
     diets = Diets.query.get_or_404(id)
@@ -409,6 +423,26 @@ def display_diets(id):
 
     
 #     return render_template('display_user_diets.html', diets=diets, result=result, diet=diet)
+
+@app.route('/diets/<int:diet_id>/foods/<string:food_id>', methods=['DELETE'])
+def delete_food_in_diet(diet_id, food_id):
+    try:
+        diet = Diets.query.get_or_404(diet_id)
+        print("diet:", diet)
+        
+        food = Food.query.filter_by(api_id=food_id).first_or_404()
+        print("food:", food)
+        
+        food_in_diet = FoodinDiet.query.filter_by(diet_id=diet_id, food_id=food.id).first()
+        print("food_in_diet:", food_in_diet)
+        
+        db.session.delete(food_in_diet)
+        db.session.commit()
+        
+        return {"success": True}
+    except Exception as e:
+        print("Error:", e)
+        return {"success": False}
 
 
 @app.route('/diets/diet_types', methods=['GET'])

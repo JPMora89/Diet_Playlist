@@ -230,13 +230,20 @@
     margin-right: 25px;
 }
 
+.nav {
+    display: inline;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: space-between;
+}
 /* #forminput {
     padding-left: 25px;
     padding-right: 25px;
 } */
 
 #logoutclick {
-    margin-left: 600px;
+    margin-left: 200px;
 
 }
 
@@ -343,7 +350,7 @@ table {
 #navbarpagetitle {
     font-size: 30px;
     font-weight: bold;
-    margin-right: 100px;
+    margin-right: 250px;
 }
 
 #forminput {
@@ -501,6 +508,15 @@ table {
     margin-bottom: 75px;
     font-weight: bold;
 }
+.navbar {
+    display: inline;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+.searchforfoodform {
+    margin-left: -100px;
+}
 
 /* header {  
     background-color: orange;  
@@ -557,8 +573,8 @@ table {
 
 #usersignupbutton {
     padding-bottom: -50px;
-    margin-left: 500px;
-    margin-right: 50px;
+    margin-left: 150px;
+    margin-right: 10px;
 }
 
 #userloginbutton {
@@ -626,3 +642,10 @@ table {
     vertical-align: middle;
 }
 
+.usersignupandlogin {
+    display: inline;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: space-between;
+}
