@@ -38,8 +38,10 @@
         </form>
       </li>
       {% if not g.user %}
+      <div class="usersignupandlogin">
       <li ><a class="btn btn-outline-primary" id="usersignupbutton" href="/signup">Sign up</a></li>
       <li ><a class="btn btn-outline-primary" id="userloginbutton" href="/login">Log in</a></li>
+      </div>
       {% else %}
 
       <li>

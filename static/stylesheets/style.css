@@ -210,7 +210,7 @@
 }
 
 #lookupbutton {
-    margin-left: 265px;
+    margin-left: 250px;
     display: inline;
     margin-top: 20px;
     border-radius: 10px;
@@ -350,7 +350,7 @@ table {
 #navbarpagetitle {
     font-size: 30px;
     font-weight: bold;
-    margin-right: 250px;
+    margin-right: 150px;
 }
 
 #forminput {
@@ -514,9 +514,9 @@ table {
     white-space: nowrap;
     width: 100%;
 }
-.searchforfoodform {
+/* .searchforfoodform {
     margin-left: -100px;
-}
+} */
 
 /* header {  
     background-color: orange;  

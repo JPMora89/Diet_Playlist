@@ -132,7 +132,7 @@ def food_search():
     # Searching for food
     if g.user is None or not g.user:
         flash("Access unauthorized.", "danger")
-        return redirect("/login")
+        return redirect("/")
     
     else:
         ingredient = request.args.get('q')
