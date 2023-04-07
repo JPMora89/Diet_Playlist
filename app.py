@@ -20,7 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = True
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "ManchesterUnited")
-app.debug = False
+app.debug = True
 toolbar = DebugToolbarExtension(app)
 connect_db(app)
 
@@ -65,7 +65,9 @@ def get_food_data(ingredient):
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
     """Handle user signup."""
-
+    if g.user:
+       
+        return render_template('homepage.html')
 
     if CURR_USER_KEY in session:
         del session[CURR_USER_KEY]
@@ -98,7 +100,9 @@ def signup():
 @app.route('/login', methods=["GET", "POST"])
 def login():
     """Handle user login"""
-
+    if g.user:
+       
+        return render_template('homepage.html')
     form = LoginForm()
 
     if form.validate_on_submit():

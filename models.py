@@ -135,8 +135,7 @@ class FoodinDiet(db.Model):
         db.Integer,
         db.ForeignKey('diets.id', ondelete='CASCADE'),
         nullable=False)
-    food= db.relationship('Food', backref='Food_in_diet')
-    diet = db.relationship('Diets', backref='FoodinDiet')
+
     
     # id
     # Foodid
