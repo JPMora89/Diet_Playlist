@@ -3,7 +3,6 @@ import requests
 import os
 from flask import Flask, render_template, request, flash, redirect, session, g
 from flask_debugtoolbar import DebugToolbarExtension
-# from wtforms_sqlalchemy.fields import QuerySelectField
 from sqlalchemy.exc import IntegrityError
 
 from forms import CreateUserForm, LoginForm, MakeOwnDietPlanForm, ChooseDietForm
@@ -20,7 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = True
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "ManchesterUnited")
-app.debug = True
+app.debug = False
 toolbar = DebugToolbarExtension(app)
 connect_db(app)
 
@@ -235,6 +234,8 @@ def show_user_diets():
         diets = Diets.query.all()
         return render_template('display_diets.html', diets=diets)
 
+
+
 # update diet with selected foods
 @app.route('/diets/update/<int:id>', methods=['PUT'])
 def add_food_to_diet(id):
@@ -245,23 +246,26 @@ def add_food_to_diet(id):
    
     api_id = request.json.get('apiId')
     user_id = request.json.get('userId')
-#  check to see if food is duplicate
-    food = next((food for food in food_data_list if food['api_id'] == api_id), None)
     
-    new_food = Food(
+    # Check if a food with the same api_id already exists
+    food = Food.query.filter_by(api_id=api_id).first()
+    if food is None:
+        # Create a new food if not already exists
+        food = next((food for food in food_data_list if food['api_id'] == api_id), None)
+        new_food = Food(
             api_id= food['api_id'],
             user_id=user_id,
             label=food['label'],
             image_url = food['image_url'], 
             nutrition=json.dumps(food['nutrition'])) 
-    db.session.add(new_food)
-    db.session.commit()
-    print('potato')
-    print(new_food.id)
-    print(id)
+        db.session.add(new_food)
+        db.session.commit()
+        food_id = new_food.id
+    else:
+        food_id = food.id
 
     new_food_in_diet = FoodinDiet(
-        food_id = new_food.id,
+        food_id=food_id,
         diet_id=id
     )
     db.session.add(new_food_in_diet)
@@ -274,6 +278,7 @@ def add_food_to_diet(id):
     return render_template('display_user_diets.html', diet_to_update=diet_to_update, foodInsideDiet=foodInsideDiet, id= id)
     # return redirect("/diets/<int:id>")
 # delete selected diets
+
 
 @app.route('/diets/delete/<int:id>', methods=['DELETE'])
 
@@ -307,19 +312,7 @@ def display_diets(id):
     # foods = FoodinDiet.query.all()
     food_list = []
 
-    # diet_food = FoodinDiet.query.all()
-    # diet = Diets.query.all()
-    # for food in diet_food:
-    #     # print(food.food_id)
-    #     print(food.diet_id)
-    #     for id in diet_food:
-    #         if id.diet_id == food.diet_id:
-    #             print(id.diet_name)
-    #             fooddiet = Food.query.get(food.food_id)
-    #     print(fooddiet)
-    #     print(fooddiet.label)
-    #     foodname = fooddiet.label
-    #     foodimage = fooddiet.image_url
+  
 
     foods = Food.query.join(FoodinDiet).filter(FoodinDiet.diet_id == id).all()
     for food in foods:
@@ -348,85 +341,10 @@ def display_diets(id):
                 
             food_list.append(food_data) 
 
-    # foods = Food.query.all()
 
-    # foods = (db.session.query(Food.label, 
-    #                           Food.image_url,
-    #                           Food.nutrition.
-    #                           Diets.diet_name)
-    #                           .join(Diets).all())
-    
-    # for food in Food.query.all():
-    #     if (food.id in FoodinDiet.query.all()):
-    #         print(food.id)
-        
-    # for food in foods:
-    #     nutrition_list = []
-    #     nutrition = json.loads(food.nutrition)
-            
-    #     for item in nutrition:
-    #             name = item['name']
-    #             value = item['value']
-    #             nutrition_list.append({'name' : name, 'value': round(value, 2)})
-        
-    #             food_data = {
-    #                 'api_id': food.api_id,
-    #                 'user_id': food.user_id,
-    #                 'label': food.label,
-    #                 'image_url': food.image_url,
-    #                 'nutrition': nutrition_list
-    #             }
-                
-    #     food_list.append(food_data) 
-
-    
-
-
-    # diet_name = diet.diet_name
     return render_template('display_user_diets.html', food_list=food_list, diets=diets, id=id, foods=foods)
 
-# check to see if food is in foodlist
-# # 
-
-# print food to delete
-
-# @app.route('/diets/<int:id>', methods=['DELETE'])
-# def remove_food_from_diet(id):
-#     print("*" * 80)
-#     print(request.json)
-#     # FoodinDiet.diet_id == id:
-#     food_to_delete = FoodinDiet.query(id=id).one()
-#     print(food_to_delete)
-#     print("290", id)
-#     try:
-#         db.session.delete(food_to_delete)
-#         db.session.commit()
-#         foods = FoodinDiet.query.all()
-#         return render_template ('display_user_diets.html', foods=foods)
-#     except:  
-#         return flash("There was a problem deleting the diet")
-
-
-
-# deleting foods from a specific diet
-# @app.route('/diets/delete/<int:id>', methods=['GET'])
-# def delete(id):
-#     user_id = g.user.id
-#     user_diets = Diets.query.filter_by(user_id=user_id).all()
-#     result = request.form
-
-#     return render_template('display_user_diets.html', user_diets=user_diets, result=result)
-
-# @app.route('/diets/<int:id>', methods=['PUT'])
-# def update_diets(id):
-#     print(request.json)
-#     user_id = g.user.id
-#     diets = Diets.query.filter_by(user_id=user_id).all()
-#     result = request.form
-#     diet = [diet for diet in diets if diet.id == diet.id]
-
-    
-#     return render_template('display_user_diets.html', diets=diets, result=result, diet=diet)
+# Check to see if there's a duplicate food in the database
 
 @app.route('/diets/<int:diet_id>/foods/<string:food_id>', methods=['DELETE'])
 def delete_food_in_diet(diet_id, food_id):

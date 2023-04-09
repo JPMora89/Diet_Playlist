@@ -1,14 +1,4 @@
-/* .homepagebackground {
-    /* background-image: url(/static/images/homepagebackground.webp); */
-    /* min-height: 1000px;
-    width: 100%;
-    /* overflow: auto; */
-    /* background-position: center 80px;
-    position: relative;
-    
-    min-width: 1500px; */ 
-/* } */ 
-
+/*  HOMEPAGE */
 .homepagebutton {
     position: relative;
     /* bottom: -400px;
@@ -27,26 +17,6 @@
     /* bottom: 100px; */
     margin-top: 150px;
 }
-
-
-/* 
-* {
-    background-color: #f9f9f9;
-} */
-/* .homepagebody {
-    background-image: url(/static/images/homepagebackground.webp);
-    min-height: 1200px;
-    margin-top: 100px;
-    width: 100%;
-    overflow: auto;
-    background-position: center 80px;
-    position: relative;
-    background-repeat: no-repeat;
-    min-width: 1500px;
-    background-size: cover;
-    z-index: 12;
-
-} */
 
 .homepagetaglines {
     margin-left: 600px;
@@ -80,6 +50,7 @@
     padding: 20px;
 }
 
+/* Display User Diets */
 .nutrientfontcolor {
     color: black;
     background-color: #772323;
@@ -92,38 +63,7 @@
     text-align: left;
 }
 
-/* html, body {
-    background-color: #f9f9f9;
-  }
-
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  } */
-
-  /* .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .avatar {
-    width: 150px;
-    height: 150px;
-    box-sizing: border-box;
-    border: 5px white solid;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-    transform: translatey(0px);
-    animation: float 6s ease-in-out infinite;
-    /* img: { width: 100%; height: auto; } */
-  /* } */ 
-
+/* Create Diet form page */
   .createdietform {
     justify-content: center;
     align-content: center;
@@ -151,13 +91,6 @@
 
   }
 
-  /* .formcontainer {
-    margin-top: 100px;
-  } */
-/* 
-  #DietName.createdietform {
-    margin-top: 100px;
-  } */
 
   .displaydietsheader {
     margin-left: 400px;
@@ -237,10 +170,6 @@
     width: 100%;
     justify-content: space-between;
 }
-/* #forminput {
-    padding-left: 25px;
-    padding-right: 25px;
-} */
 
 #logoutclick {
     margin-left: 200px;
@@ -266,10 +195,6 @@
     background-color: #f9f9f9;
 } 
 /* 
-.homepagebody {
-    background-color: #f9f9f9;
-}  */
-
 #submitformcreatediet {
     margin-left: 150px;
     margin-top: 100px;
@@ -277,10 +202,10 @@
     border-radius: 10px;
     padding: 10px;
     /* box-shadow:0 0 15px 4px rgba(78, 77, 76, 0.61); */
-    text-align: center;
+    /* text-align: center;
     font-weight: bold;
-    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5);
-}
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5); */
+
 
 #checkoutyourdietsbutton {
     /* margin-left: 450px; */
@@ -300,15 +225,7 @@
 
 }
 
-/* #checkoutyourdietsbutton:hover {
-    background-color: red;
-} */
 
-/* .navbar {
-    justify-content: space-evenly;
- 
-   
-} */
 
 .userfoodtableheaders {
     justify-content: center;
@@ -439,11 +356,7 @@ table {
     font-size: 175px;
   }
 
-/* .homepageinfopart1 {
-    z-index: 4000;
-    font-size: 50px;
-    
-} */
+
 .checkoutdietsdivider {
     /* margin-left: 500px; */
     margin-top: -75px;
@@ -457,35 +370,11 @@ table {
 }
 
 #createyourowndietbutton {
-    /* margin-left: 450px;
-    text-align: center;
-    align-items: center;
-    margin-top: 100px;
-    border-radius: 10px;
-    background-color: #000;
-    color: #f9f9f9;
-    width: 400px;
-    font-family: 'Times New Roman', Times, serif;
-    /* display: inline; */
-    /* margin-bottom: 10px;
-    width: 400px;
-    height: 125px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    align-content: center;
-    text */ 
+
     margin-left: 475px;
     margin-bottom: -50px;
     margin-top: 50px;
-    /* border: solid black 1px;
-    background-color: #000;
-    color: #f9f9f9; */
+
 
 }
 
@@ -516,31 +405,7 @@ table {
     /* width: 100%; */
  
 }
-/* .searchforfoodform {
-     margin-left: -100px; 
-     margin-right: -200px; 
-     margin-right: -1000px; 
-  }  */
 
-/* header {  
-    background-color: orange;  
-    position: fixed;  
-    left: 0;  
-    right: 0;  
-    top: 5px;  
-    height: 30px;  
-    display: flex;  
-    align-items: center;  
-    box-shadow: 0 0 25px 0 black;  
-    }  
-
-    .navigationbar {
-        display: inline;
-    } */
-
-/* .navbar {
-    display: flex;
-} */
 
 .homepageimage2 {
     z-index: 50000;
@@ -558,23 +423,13 @@ table {
     background-color: rgb(241, 170, 82);
 }
 
-/* #user-form {
-    margin-left: 100px;
-} */
 
 .join-message {
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
-/* #signupbutton {
-    margin-top: 50px;
-}
 
-#loginbutton {
-    margin-top: 50px ;
-    /* margin-left: -300px; */
-/* } */ 
 
 #usersignupbutton {
     /* padding-bottom: -50px; */
@@ -657,17 +512,9 @@ table {
     vertical-align: middle;
 }
 .formtoselectdiet {
-    /* font-size: 15px;
-    font-weight: 500; */
+
     vertical-align: middle;
 }
 
-/* .usersignupandlogin {
-    display: inline-flexbox;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;  */
-    /* justify-content: space-between;  */
-    /* margin-left: 200px; }   */
 
  
