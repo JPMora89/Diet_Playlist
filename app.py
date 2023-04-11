@@ -158,10 +158,7 @@ def food_search():
                             'nutrition': nutrition_list})
             
             user_id = g.user.id
-            print(food_data_list)
-
-        
-        food_to_add = [food.api_id for food in User.query.get(user_id).foods]
+ 
 
             
         form = ChooseDietForm()
@@ -330,7 +327,9 @@ def display_diets(id):
                 name = item['name']
                 value = item['value']
                 nutrition_list.append({'name' : name, 'value': round(value, 2)})
-        
+
+                if "ENERC_KCAL" in nutrition_list:
+                    print("ENERC_KCAL".value)
                 food_data = {
                     'api_id': food.api_id,
                     'user_id': food.user_id,
