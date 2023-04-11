@@ -35,9 +35,10 @@ The database models includes one for the User, the Foods available, the user-cre
 
 ## Images
 ![image](https://user-images.githubusercontent.com/110551396/231226248-f48937cb-086e-4316-9486-ae3a93d7d4ed.png)
+![image](https://user-images.githubusercontent.com/110551396/231226436-30eda211-29f7-4e29-b74c-03693e5c7541.png)
 
 ![image](https://user-images.githubusercontent.com/110551396/231226145-1dc4f6c9-b15e-4254-b26e-41c99aeda167.png)
-![image](https://user-images.githubusercontent.com/110551396/231226194-28046e5a-e380-4570-b6dc-b36eb23c0f67.png)
+![image](https://user-images.githubusercontent.com/110551396/231226490-0558a914-20ed-4e57-900b-3f3390b29a4d.png)
 
 
 ![image](https://user-images.githubusercontent.com/110551396/231225910-c1c6b667-66a1-4ae7-8780-44a5f2a7d9f1.png)
