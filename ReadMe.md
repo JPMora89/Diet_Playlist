@@ -34,6 +34,7 @@ The application utilizes https://www.edamam.com. The Food Database API allows yo
 The database models includes one for the User, the Foods available, the user-created Diets as well as Food_in_Diet which shows all of the foods a user has inserted into specific diets. 
 
 ## Images
+![image](https://user-images.githubusercontent.com/110551396/231225910-c1c6b667-66a1-4ae7-8780-44a5f2a7d9f1.png)
 
 
 ## Project Link
