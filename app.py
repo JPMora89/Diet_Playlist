@@ -14,7 +14,7 @@ app.app_context().push()
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///diet_playlist'))
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///diet_playlist').replace('postgres', 'postgresql'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = True
