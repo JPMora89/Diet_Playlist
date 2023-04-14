@@ -9,12 +9,12 @@ from forms import CreateUserForm, LoginForm, MakeOwnDietPlanForm, ChooseDietForm
 from models import db, connect_db, User, Food, Diets, FoodinDiet
 
 CURR_USER_KEY = "curr_user"
-app = Flask(__name__)
-app.app_context().push()
+app = Flask(__name__, static_url_path='/static')
+#app.app_context().push()
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///diet_playlist').replace('postgres', 'postgresql'))
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgres:///diet_playlist'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = True
