@@ -10,7 +10,7 @@ from models import db, connect_db, User, Food, Diets, FoodinDiet
 
 CURR_USER_KEY = "curr_user"
 app = Flask(__name__, static_url_path='/static')
-#app.app_context().push()
+app.app_context().push()
 
 
 
