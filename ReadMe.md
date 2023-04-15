@@ -46,6 +46,7 @@ The database models includes one for the User, the Foods available, the user-cre
 
 ## Project Link
 
+https://diet-playlist.herokuapp.com/
 
 ## Team members
 Pablo Mora
