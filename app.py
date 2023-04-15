@@ -16,7 +16,7 @@ app = Flask(__name__, static_url_path='/static')
 
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgresql:///diet_playlist'))
-uri = os.getenv("DATABASE_URL", "postgresql:///diet_playlist")  # or other relevant config var
+uri = os.getenv("DATABASE_URL", "postgres://lavtqxqhssiwtb:ccb8932950acc058c744d4f5a92ae9ed6d37ee8de845abeb7b1dde196ae2efa5@ec2-34-202-127-5.compute-1.amazonaws.com:5432/dda0e947bi4jmn")  # or other relevant config var
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://", 1)
 
