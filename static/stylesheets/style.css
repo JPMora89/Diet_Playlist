@@ -1,20 +1,15 @@
 /*  HOMEPAGE */
 .homepagebutton {
     position: relative;
-    /* bottom: -400px;
-    right: 600px; */
-    /* margin: 20px; */
+
     background-color: rgb(241, 170, 82);
     border-radius: 10px;
     padding: 10px;
-    /* box-shadow:0 0 15px 4px rgba(78, 77, 76, 0.61); */
     text-align: center;
     font-weight: bold;
     box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5);
-    /* margin-top: 300px; */
     z-index: 5000;
-    /* margin-block: auto 20px; */
-    /* bottom: 100px; */
+
     margin-top: 150px;
 }
 
@@ -44,7 +39,6 @@
 
 .homepagePhrase {
     margin-bottom: 10px;
-    /* margin-left: 300px; */
     width: 100%;
     background-color: #f9f9f9;
     padding: 20px;
@@ -58,7 +52,6 @@
 }
 
 .nutrientdatafontcolor {
-    /* background-color: #f9f9f9; */
     align-items: start;
     text-align: left;
 }
@@ -70,7 +63,6 @@
     margin-left: 250px;
     font-size: 40px;
     z-index: 25;
-    /* margin-top: 100px; */
     position: absolute;
     margin-top: 200px;
     margin-right: 100px;
@@ -148,7 +140,6 @@
     margin-top: 20px;
     border-radius: 10px;
     padding: 10px;
-    /* box-shadow:0 0 15px 4px rgba(65, 64, 64, 0.527); */
     background-color: rgb(241, 170, 82);
     font-weight: bold;
     box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5);
@@ -194,29 +185,15 @@
 #wholebody {
     background-color: #f9f9f9;
 } 
-/* 
-#submitformcreatediet {
-    margin-left: 150px;
-    margin-top: 100px;
-    background-color: rgb(241, 170, 82);
-    border-radius: 10px;
-    padding: 10px;
-    /* box-shadow:0 0 15px 4px rgba(78, 77, 76, 0.61); */
-    /* text-align: center;
-    font-weight: bold;
-    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5); */
+
 
 
 #checkoutyourdietsbutton {
-    /* margin-left: 450px; */
     justify-content: center;
     font-size: 40px;
-    /* margin-top: 100px;
-    margin-bottom: 100px; */
-    /* margin-block: 20px; */
+ 
     margin-top: 25px;
-    /* margin-left: 300px;
-    margin-right: ; */
+
     width: 500px;
     align-items: center;
     margin-left: 400px;
@@ -273,7 +250,6 @@ table {
 #forminput {
     padding: 10px;
     margin: 10px;
-    /* box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.5); */
     width: 500px;
     background-color: rgb(241, 170, 82);
     text-align: center;
@@ -283,7 +259,7 @@ table {
     
 }
   
-#forminput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+#forminput::placeholder { 
     color: rgb(24, 23, 23);
     opacity: 1; 
   }
@@ -314,16 +290,13 @@ table {
     opacity: 5;
     margin-top: 100px;
     display: flex;
-    /* height: 500px;
-    width: 500px; */
+
     z-index: 3000;
-    /* box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.205); */
     margin-right: -100px;
 
   }
 
 .foodplateimage{
-    /* margin-left: 100px; */
     padding-left: 25px;
     box-shadow:0 0  rgba(0, 0, 0, 0.205);
 }
@@ -347,7 +320,6 @@ table {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    /* width: 100%; */
   }
 
   .homepageinfodiv {
@@ -358,7 +330,6 @@ table {
 
 
 .checkoutdietsdivider {
-    /* margin-left: 500px; */
     margin-top: -75px;
     border: solid black 2px;
     text-align: center;
@@ -402,7 +373,6 @@ table {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    /* width: 100%; */
  
 }
 
@@ -432,29 +402,17 @@ table {
 
 
 #usersignupbutton {
-    /* padding-bottom: -50px; */
     margin-left: -300px;
     margin-right: 10px;
     display: flex;
-    /* overflow: hidden; */
     margin-top: 200px;
-    /* margin-top: 100px;
-}
 
-/* #userloginbutton { */
-    /* border: solid blue 1px;
-    /* margin-bottom: 25px; */
-    /* margin-left: -100px;
-    padding-bottom: -50px;
-    display: inline-block;
-    overflow: hidden;
-    margin-bottom: -200px; */ 
     padding-bottom: -50px;
     margin-left: -150px;
     margin-right: 10px;
     display: inline;
     overflow: hidden;
-} */
+} 
 
 .homepageTitleanon {
     margin-left: 200px;

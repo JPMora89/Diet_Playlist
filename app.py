@@ -281,8 +281,7 @@ def add_food_to_diet(id):
     id = id
 
     return render_template('display_user_diets.html', diet_to_update=diet_to_update, foodInsideDiet=foodInsideDiet, id= id)
-    # return redirect("/diets/<int:id>")
-# delete selected diets
+
 
 
 @app.route('/diets/delete/<int:id>', methods=['DELETE'])

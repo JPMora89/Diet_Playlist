@@ -86,7 +86,6 @@ class Food(db.Model):
         db.ForeignKey('users.id', ondelete='CASCADE'),
         nullable=False)
     # as a foreign key relate to diet
-    # diets = db.relationship('Diets')
     label = db.Column(db.Text, nullable=False)
     nutrition = db.Column(db.String(255), nullable=False)
     image_url = db.Column(db.String, nullable=False)
@@ -103,11 +102,7 @@ class Diets(db.Model):
         db.Integer,
         db.ForeignKey('users.id', ondelete='CASCADE'),
         nullable=False)
-    # food_id = db.Column(
-    #     db.Integer,
-    #     db.ForeignKey('foods.id', ondelete='cascade'),
-    #     unique=True
-    # )
+
 
 
    
